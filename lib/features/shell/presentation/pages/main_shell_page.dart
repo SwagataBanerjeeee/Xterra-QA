@@ -27,11 +27,11 @@ class _MainShellPageState extends State<MainShellPage> {
   ];
 
   static const _tabs = [
-    _NavTab(asset: 'assets/images/ic_dashboard.svg',   label: 'Dashboard'),
+    _NavTab(asset: 'assets/images/ic_dashboard.svg', label: 'Dashboard'),
     _NavTab(asset: 'assets/images/ic_my_projects.svg', label: 'My Projects'),
-    _NavTab(asset: 'assets/images/ic_leads.svg',       label: 'Leads'),
+    _NavTab(asset: 'assets/images/ic_leads.svg', label: 'Leads'),
     _NavTab(asset: 'assets/images/ic_performance.svg', label: 'Performance'),
-    _NavTab(icon: Icons.receipt_long_outlined,         label: 'Logs'),
+    _NavTab(icon: Icons.receipt_long_outlined, label: 'Logs'),
   ];
 
   @override
@@ -71,7 +71,7 @@ class _MainShellPageState extends State<MainShellPage> {
           fontFamily: 'Inter',
           fontSize: 18.sp,
           fontWeight: FontWeight.bold,
-          color: _currentTab == 0 ? AppColors.brand : AppColors.primary,
+          color: _currentTab == 0 ? Color(0XFF333333) : AppColors.primary,
         ),
       ),
       actions: [
@@ -82,7 +82,11 @@ class _MainShellPageState extends State<MainShellPage> {
             shape: BoxShape.circle,
           ),
           child: IconButton(
-            icon: Icon(Icons.notifications_outlined, size: 22.sp, color: AppColors.primary),
+            icon: Icon(
+              Icons.notifications_outlined,
+              size: 22.sp,
+              color: AppColors.primary,
+            ),
             onPressed: () => context.push(AppRouter.notifications),
           ),
         ),
@@ -128,7 +132,7 @@ class _MainShellPageState extends State<MainShellPage> {
                           width: 22.sp,
                           height: 22.sp,
                           colorFilter: ColorFilter.mode(
-                            selected ? AppColors.brand : AppColors.secondaryText,
+                            selected ? Color(0XFF333333) : Color(0XFFAAAAAA),
                             BlendMode.srcIn,
                           ),
                         )
@@ -136,7 +140,8 @@ class _MainShellPageState extends State<MainShellPage> {
                         Icon(
                           tab.icon!,
                           size: 22.sp,
-                          color: selected ? AppColors.brand : AppColors.secondaryText,
+                          color:
+                              selected ? Color(0XFF333333) : Color(0XFFAAAAAA),
                         ),
                       SizedBox(height: 2.h),
                       Text(
@@ -144,8 +149,10 @@ class _MainShellPageState extends State<MainShellPage> {
                         style: TextStyle(
                           fontFamily: 'Inter',
                           fontSize: 10.sp,
-                          fontWeight: selected ? FontWeight.w600 : FontWeight.normal,
-                          color: selected ? AppColors.brand : AppColors.secondaryText,
+                          fontWeight:
+                              selected ? FontWeight.w600 : FontWeight.normal,
+                          color:
+                              selected ? Color(0XFF333333) : Color(0XFFAAAAAA),
                         ),
                       ),
                     ],
@@ -171,7 +178,11 @@ class _LeadsBody extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.people_outline, size: 64.sp, color: const Color(0xFFCCCCCC)),
+          Icon(
+            Icons.people_outline,
+            size: 64.sp,
+            color: const Color(0xFFCCCCCC),
+          ),
           SizedBox(height: 16.h),
           Text(
             'Leads',
@@ -206,7 +217,11 @@ class _PerformanceBody extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.bar_chart_outlined, size: 64.sp, color: const Color(0xFFCCCCCC)),
+          Icon(
+            Icons.bar_chart_outlined,
+            size: 64.sp,
+            color: const Color(0xFFCCCCCC),
+          ),
           SizedBox(height: 16.h),
           Text(
             'Performance',
@@ -241,7 +256,11 @@ class _LogsBody extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.receipt_long_outlined, size: 64.sp, color: const Color(0xFFCCCCCC)),
+          Icon(
+            Icons.receipt_long_outlined,
+            size: 64.sp,
+            color: const Color(0xFFCCCCCC),
+          ),
           SizedBox(height: 16.h),
           Text(
             'Logs',
