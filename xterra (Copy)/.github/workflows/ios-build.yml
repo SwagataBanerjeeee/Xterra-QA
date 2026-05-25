@@ -17,8 +17,13 @@ jobs:
         with:
           flutter-version: stable
 
+      - name: Debug folder structure
+        run: ls -R
+
       - name: Install dependencies
+        working-directory: "xterra (Copy)"
         run: flutter pub get
 
-      - name: Build iOS (no signing)
+      - name: Build iOS
+        working-directory: "xterra (Copy)"
         run: flutter build ios --release --no-codesign
